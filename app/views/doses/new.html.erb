@@ -10,9 +10,9 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit %>
+      <%= f.button :submit , class: "btn btn-primary"%>
     </div>
   <% end %>
-</div>
 
-<%= link_to 'Back', cocktails_path %>
+  <%= link_to "Back to #{@cocktail.name}", cocktails_path %>
+</div>

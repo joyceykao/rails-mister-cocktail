@@ -1,9 +1,47 @@
-<h1>Cocktails</h1>
+<div class="navbar justify-content-between">
+<%= image_tag "cocktail.png", class: "avatar"%>
+<h2>After 5 PM Cocktails</h2>
+<%= link_to 'Add Cocktail', new_cocktail_path, class: "btn btn-primary" %>
+</div>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li> <%= link_to cocktail.name, cocktail %></li>
-    <% end %>
-</ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1534446322009-45c6d25cbca3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);">
+  <div class="container">
+    <h1>Oh, whatever,</h1>
+    <span id="banner-typed-text"></span>
+  </div>
+</div>
 
-<%= link_to 'Add Cocktail', new_cocktail_path %>
+<div class="container mt-3">
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1525374293190-c0802e068ea8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80)">
+        <%= link_to cocktail.name, cocktail, id: "link" %>
+      </div>
+      <% end %>
+    </div>
+</div>
+
+
+<div class="footer">
+  <div class="footer-copyright">
+    Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>
+
+
+<!-- <div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Breakfast
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+    Lunch
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    Dinner
+  </div>
+</div> -->

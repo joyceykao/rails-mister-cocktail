@@ -1,8 +1,11 @@
-<h1><%= @cocktail.name %></h1>
-
-<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-
-<ul class="list-group">
+<div class="container d-flex justify-content-between">
+  <div class="card">
+    <h2><%= @cocktail.name %></h2>
+    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
+  <div class="card">
+    <h3>Ingredients</h3>
+  <ul class="list-group">
     <% @cocktail.doses.each do |dose| %>
       <li class="list-group-item">
         <%= dose.description %>
@@ -15,10 +18,12 @@
       </li>
     <% end %>
   </ul>
+  </div>
+</div>
+<div class="container d-flex justify-content-between">
+  <%= link_to 'Edit name or image', edit_cocktail_path(@cocktail), class: "btn btn-primary" %>
 
+  <%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
 
-<p><%= link_to 'Edit', edit_cocktail_path(@cocktail) %></p>
-
-<p><%= link_to 'Add Dose', new_cocktail_dose_path(@cocktail) %></p>
-
-<p><%= link_to 'Back', cocktails_path %></p>
+  <%= link_to 'Back', cocktails_path, class: "btn btn-primary" %>
+</div>
