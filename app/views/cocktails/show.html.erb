@@ -1,6 +1,6 @@
 <h1><%= @cocktail.name %></h1>
 
-<%= cl_image_tag "nbe3u0g6x4a6jfcs1txm671ptmi0", height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
 
 <ul class="list-group">
     <% @cocktail.doses.each do |dose| %>
