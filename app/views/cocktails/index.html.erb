@@ -1,7 +1,3 @@
-<div class="navbar justify-content-between fixed-top" style="background: white">
-<%= image_tag "cocktail.png", class: "avatar"%>
-<%= link_to 'Add Cocktail', new_cocktail_path, class: "btn btn-primary" %>
-</div>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1534446322009-45c6d25cbca3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);">
   <div class="container">
@@ -14,22 +10,13 @@
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail), id: 'link' do %>
-        <div class="card-category nounderline" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(cocktail.photo.key) %>')" >
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(cocktail.photo.key) %>')" >
           <%= cocktail.name  %>
         </div>
       <% end %>
       <% end %>
     </div>
-</div>
-
-
-<div class="footer">
-  <div class="footer-copyright">
-    Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-  </div>
-  <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
-  </div>
+    <%= link_to 'Add New Cocktail', new_cocktail_path, class: 'btn btn-primary mt-3' %>
 </div>
 
 
